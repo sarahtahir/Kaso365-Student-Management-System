@@ -26,6 +26,21 @@ if(!$con)
  
 }
 
+//getListOfStudent function ==================
+function getListOfStudent()
+{
+//create connection
+$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+$sql = 'select * from studentinfo';
+$qry = mysqli_query($con,$sql);//run query
+return $qry;  //return query
+}
+
 
 
 ?>
