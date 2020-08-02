@@ -26,6 +26,20 @@ if(!$con)
  
 }
 
+//getListOfStaff function ==================// works too
+function getListOfStaff()
+{
+//create connection
+$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+$sql = 'select * from staff';
+$qry = mysqli_query($con,$sql);//run query
+return $qry;  //return query
+}
 
 
 
