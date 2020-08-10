@@ -59,7 +59,11 @@ table{
 		            echo "<td>".$row["staffID"]."</td>";
 		            echo "<td>".$row["name"]."</td>";
 		            echo "<td>";
-					echo '<button type="submit" data-toggle="modal" data-target="#view" name="viewStaffInfo" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button>';
+				    
+				    echo '<form action="viewStaffInfo.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDView'>";
+					echo '<button type="submit" data-toggle="modal" data-target="#view" name="viewStaffBtn" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button>';
+				    echo '</form>';
 					 echo "</td>";
 				
 		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';

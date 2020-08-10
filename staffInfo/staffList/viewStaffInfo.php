@@ -19,9 +19,9 @@
 <div class="container">
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-           <A href="edit.html" >Edit Profile</A>
+           
 
-        <A href="edit.html" >Logout</A>
+        
        <br>
 <p class=" text-info">May 05,2014,03:00 pm </p>
       </div>
@@ -30,62 +30,55 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Nurazwa Izwani</h3>
-            </div>
-            <div class="panel-body">
+				
+			<?php
+			
+			include 'staff.php';
+			$qry = getStaffInfo();
+	        $row = mysqli_fetch_assoc($qry);	
+				
+            echo '<h3 class="panel-title">'.$row['name'].'</h3>';
+            echo '</div>';
+            echo '<div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://i.dlpng.com/static/png/1114993_preview_preview.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://i.dlpng.com/static/png/1114993_preview_preview.png" class="img-circle img-responsive"> </div>';
                 
-                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                  <dl>
-                    <dt>DEPARTMENT:</dt>
-                    <dd>Administrator</dd>
-                    <dt>HIRE DATE</dt>
-                    <dd>11/12/2013</dd>
-                    <dt>DATE OF BIRTH</dt>
-                       <dd>11/12/2013</dd>
-                    <dt>GENDER</dt>
-                    <dd>Male</dd>
-                  </dl>
-                </div>-->
-                <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
+                
+                echo '<div class=" col-md-9 col-lg-9 ">';
+                 echo '<table class="table table-user-information">';
+                   echo '<tbody>
                       <tr>
-                        <td>ID:</td>
-                        <td>A18DW0056</td>
-						</tr>
+                        <td>ID:</td>';
+                        echo '<td>'.$row['staffID'].'</td>';
+						echo '</tr>
 						<tr>
-                        <td>Name:</td>
-                        <td>NurAzwa Izwani</td>
-						</tr>
+                        <td>Name:</td>';
+                        echo '<td>'.$row['name'].'</td>';
+						echo '</tr>
                       <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/2000</td>
-                      </tr>
+                        <td>Date of Birth</td>';
+                        echo '<td>'.$row['BOD'].'</td>';
+                      echo '</tr>
 						<tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
-                             <tr>
-                        <td>Birth Of Date</td>
-                        <td>18/06/2000</td>
-                      </tr>
-                        <tr>
-                        <td>Address</td>
-                        <td>Kelang</td>
-                      </tr>
+                        <td>Gender</td>';
+                        echo '<td>'.$row['gender'].'</td>';
+                      echo '</tr>';                      
+                        echo '<tr>
+                        <td>Address</td>';
+                        echo '<td>'.$row['address'].'</td>';
+                      echo '</tr>
                       <tr>
-                        <td>Position</td>
-                        <td> Mengajar Sirah</td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890</td>   
-                      </tr>
+                        <td>Position</td>';
+                       echo '<td>'.$row['position'].'</td>';
+                      echo '</tr>';
+						echo '<tr>
+                        <td>Phone Number</td>';
+                        echo '<td>'.$row['phonenum'].'</td>';   
+                      echo '</tr>
                      
                     </tbody>
-                  </table>
-                 
+                  </table>';
+                 ?>
                 </div>
               </div>
             </div>
