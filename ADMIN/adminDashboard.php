@@ -1,10 +1,7 @@
 <?php
 
-session_start();
+include '../header.php';
 
-if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) {
-	header ("Location: ../Login/Login.html");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +17,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 	
 /*Calender Style */	
-	* {box-sizing: border-box;}
+	* {box-s1izing: border-box;}
 ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 

@@ -1,10 +1,7 @@
 <?php
 
-session_start();
+include '../header.php';
 
-if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) {
-	header ("Location: ../Login/Login.html");
-}
 ?>
 
 <!DOCTYPE html>
