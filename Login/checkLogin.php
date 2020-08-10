@@ -15,9 +15,9 @@ if($isValidUser)
 	{
 	$userType=getUserType($username);
 	if($userType =='ADMIN')
-		header("location:../adminMenu.php"); // redirect to admin page
+		header("location:../ADMIN/adminDashboard.php"); // redirect to admin page
 	else if($userType =='STAFF')
-		header("location:../staffMenu.php"); // redirect to staff menu menu page
+		header("location:../staffInfo/staffDashboard.php"); // redirect to staff menu menu page
 	
 	}
 else {
