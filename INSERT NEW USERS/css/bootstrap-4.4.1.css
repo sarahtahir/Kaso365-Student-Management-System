@@ -3,7 +3,7 @@
 
 body{
 	 
-    background: -webkit-linear-gradient(left, #fec180, #ff8993);
+    background: white;
 
 	 width:100%;
 	 height:100vh;
@@ -24,7 +24,7 @@ body{
    box-shadow: 2px 5px 5px 0px #eee;
      max-width: 500px;
      padding-top: 10px;
-     height: 650px;
+     height: 500px;
      margin-top: 166px;
 }
 /*--- for label of first and last name---*/
