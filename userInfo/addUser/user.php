@@ -22,5 +22,9 @@ if(!$con)
  
 //echo $sql;
 	$qry = mysqli_query($con,$sql);
+	
+	print_r($qry);
  
 }
+
+?>

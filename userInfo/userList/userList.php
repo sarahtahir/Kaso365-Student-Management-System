@@ -44,27 +44,34 @@ table{
 		        </tr>
 		    </thead>
 		    <tbody>
-		        <tr id="d1">
-		            <td>A18DW1013</td>
-		            <td id="f1">Nur Ain Naim</td>
-		           <td><button type="button" data-toggle="modal" data-target="#view" data-uid="1" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+				<?php
+				
+				include 'user.php';
+			
+			$userList = getListOfUser();
+			$bil=1;
+			
+			while($row = mysqli_fetch_assoc($userList)) {	
+				
+		     echo '<tr>';
+				    $staffID = $row["staffID"];
+		            echo '<td>'.$row['staffID'].'</td>';
+		            echo '<td>'.$row['username'].'</td>';
+					
+		           echo "<td>";
+				    
+				    echo '<form action="viewUserInfo.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDView'>";
+					echo '<button type="submit" data-toggle="modal" data-target="#view" name="viewUserBtn" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button>';
+				    echo '</form>';
+					 echo "</td>";
+					
+		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+					
 		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-		        <tr id="d2">
-		            <td>A18DW0066</td>
-		            <td id="f2">Aminah Zaharah Naim</td>
-                    <td><button type="button" data-toggle="modal" data-target="#view" data-uid="2" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-                <tr id="d2">
-		            <td>A18DW1111</td>
-		            <td id="f2">Asyfarr Razali Rezal</td>
-                    <td><button type="button" data-toggle="modal" data-target="#view" data-uid="2" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
+		        </tr>';
+				$bill++; }
+		       ?> 
 		    </tbody>
 		</table>
 	</div>
