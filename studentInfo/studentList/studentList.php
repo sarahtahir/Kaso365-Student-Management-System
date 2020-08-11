@@ -8,7 +8,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
 </head>
 	<h3>Student List</h3>
-	<input type="submit" class="w3-display-right" value="Submit">
+	<button type="submit" class="w3-display-right" value="Submit">
 <body>
 <div class="container">
 	<div class="row">

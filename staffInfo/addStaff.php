@@ -1,8 +1,4 @@
-<?php
 
-include '../header.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,7 +89,7 @@ include '../header.php';
           <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="BirthDate"><h4>Birth Of Date</h4></label>
+                            <label for="BirthDate"><h4>Date of Birth</h4></label>
                               <input type="date" class="form-control" name="BOD" id="BOD" placeholder="BOD" title="enter your Birth of day.">
                           </div>
                       </div>

@@ -1,8 +1,3 @@
-<?php
-
-include '../header.php';
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +31,9 @@ table{
 </style>
 <body>
 <h2> Staff List </h2>
+	<form action="../addStaff.php" method="post">
 	<input type="submit" class="w3-display-right" value="Submit">
+	</form>
 <div class="container">
 	<div class="row">
 		<table class="table table-hover table-responsive">
