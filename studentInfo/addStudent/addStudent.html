@@ -22,7 +22,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Add Student</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,7 +34,7 @@
 <hr>
 <div class="container bootstrap snippet">
     <div class="row">
-  		<div class="col-sm-10"><h1>Aminah Sidi</h1></div>
+  		<div class="col-sm-10"><h1>Add Student</h1></div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
     </div>
     <div class="row">
@@ -58,12 +58,12 @@
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" action="../processStud.php" method="post" id="registrationForm">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>ID</h4></label>
-                              <input type="text" class="form-control" name="ID" id="ID" placeholder="ID" title="enter your ID.">
+                              <label for="first_name"><h4>Student ID</h4></label>
+                              <input type="text" class="form-control" name="studentID" id="ID" placeholder="ID" title="enter your ID.">
                           </div>
                       </div>
                       <div class="form-group">
@@ -77,8 +77,8 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4> Birth Of Date: </h4></label>
-                              <input type="text" class="form-control" name="bod" id="bod" placeholder="bod" title="enter your bith of date.">
+                              <label for="phone"><h4> Date of Birth: </h4></label>
+                              <input type="date" class="form-control" name="BOD" id="bod" placeholder="bod" title="enter your date of birth.">
                           </div>
                       </div>
           
@@ -92,28 +92,29 @@
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Address</h4></label>
-                              <input type="email" class="form-control" name="Address" id="Address" placeholder="Address" title="enter your address.">
+                              <input type="text" class="form-control" name="address" id="Address" placeholder="Address" title="enter your address.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Parents Name</h4></label>
-                              <input type="text" class="form-control" id="pn" placeholder="pn" title="enter parents name.">
+                              <input type="text" class="form-control" name="pname" placeholder="pn" title="enter parents name.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="password"><h4>Parents Phone Number</h4></label>
-                              <input type="text" class="form-control" name="ppn" id="pppn" placeholder="ppn" title="enter your parents phone number.">
+                              <input type="text" class="form-control" name="phonenum" id="pppn" placeholder="ppn" title="enter your parents phone number.">
                           </div>
                       </div>
                       
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                              	<button class="btn btn-lg btn-success" name="addStudButton" type="submit">
+								<i class="glyphicon glyphicon-ok-sign"></i> Save</button>
                                	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div>

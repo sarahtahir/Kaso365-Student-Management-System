@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Font Awesome Icons</title>
+<title>Staff List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,6 +31,9 @@ table{
 </style>
 <body>
 <h2> Staff List </h2>
+	<form action="../addStaff.php" method="post">
+	<input type="submit" class="w3-display-right" value="Submit">
+	</form>
 <div class="container">
 	<div class="row">
 		<table class="table table-hover table-responsive">
@@ -42,28 +46,36 @@ table{
 		            <th>Delete</th>
 		        </tr>
 		    </thead>
-		    <tbody>
-		        <tr id="d1">
-		            <td>A18DW9087</td>
-		            <td id="f1">Mohd Joji Miller</td>
-		           <td><button type="button" data-toggle="modal" data-target="#view" data-uid="1" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-		        <tr id="d2">
-		            <td>A18DW9764</td>
-		            <td id="f2">Abdullah Brian Rich</td>
-                    <td><button type="button" data-toggle="modal" data-target="#view" data-uid="2" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-                <tr id="d2">
-		            <td>A18DW8906</td>
-		            <td id="f2">Nur Niki Amirah </td>
-                    <td><button type="button" data-toggle="modal" data-target="#view" data-uid="2" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#update" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
+			<tbody>
+			<?php 
+			
+			include 'staff.php';
+			
+			$staffList = getListOfStaff();
+			$bil=1;
+			
+			while($row = mysqli_fetch_assoc($staffList)) {		    
+				
+		        echo "<tr>";
+				$staffID = $row["staffID"];
+		            echo "<td>".$row["staffID"]."</td>";
+		            echo "<td>".$row["name"]."</td>";
+		            echo "<td>";
+				    
+				    echo '<form action="viewStaffInfo.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDView'>";
+					echo '<button type="submit" data-toggle="modal" data-target="#view" name="viewStaffBtn" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button>';
+				    echo '</form>';
+					 echo "</td>";
+				
+		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
+				
+		            echo '<td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>';
+				
+		        echo '</tr>';
+					$bil++;
+			}
+              ?> 
 		    </tbody>
 		</table>
 	</div>

@@ -23,56 +23,66 @@
 
         <A href="edit.html" >Logout</A>
        <br>
-<p class=" text-info">May 05,2014,03:00 pm </p>
       </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
    
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"> Nur Filzah Bin Kamal </h3>
-            </div>
+			<?php
+				
+			   include 'student.php';
+			   $qry = getStudentInfo();
+	           $row = mysqli_fetch_assoc($qry);
+				
+              echo '<h3 class="panel-title">'.$row['name'].'</h3>';
+            echo '</div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://www.nicepng.com/png/full/263-2636271_sign-in-to-start-your-session-admin-png.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://cdn5.vectorstock.com/i/1000x1000/84/29/student-girl-flat-style-beautiful-icon-avatar-eps-vector-14428429.jpg" class="img-circle img-responsive"> </div>';
                 
                 
-                <div class=" col-md-9 col-lg-9 "> 
+                echo '<div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>ID:</td>
-                        <td>A18DW0066</td>
-                      </tr>
-                      <tr>
-                        <td>Date Of Birth:</td>
-                        <td>06/02/2000</td>
-                      </tr>
-                      <tr>
-                        <td>Address</td>
-                        <td>Johor, JB </td>
-                      </tr>
+                    <tbody>';
+                      echo '<tr>';
+                        echo '<td>ID:</td>';
+                        echo '<td>'.$row['studentID'].'</td>';
+                     echo '</tr>';
+                     echo '<tr>';
+                        echo '<td>Name: </td>';
+                        echo '<td>'.$row['name'].'</td>';
+                      echo '</tr>';
+                      echo '<tr>';
+                        echo '<td>Date of Birth</td>';
+                        echo '<td>'.$row['BOD'].'</td>';
+                      echo '</tr>
                    
                          <tr>
                              <tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
+                        <td>Gender</td>';
+                        echo '<td>'.$row['gender'].'</td>';
+                      echo '</tr>
                         <tr>
-                        <td>Parents Name</td>
-                        <td>Encik Kamal <br><br>Puan Norsilawati</td>
-                      </tr>
-                   
-                        <td>Parents Phone Number</td>
-                        <td>123-4567-890(Ayah)<br><br>555-4567-890(Ibu)
-                        </td>
+                        <td>Home Address</td>';
+                        echo '<td>'.$row['address'].'</td>';
+                      echo '</tr>';
+						
+						echo '<tr>
+                        <td>Parents Name</td>';
+                        echo '<td>'.$row['pname'].'</td>';
                            
-                      </tr>
+                      echo '</tr>
+                        <tr>
+                        <td>Parents Phone Number</td>';
+                      echo '<td>'.$row['phonenum'].'</td>';
+                       echo 
+                           
+                      '</tr>
                      
                     </tbody>
-                  </table>
-                  
-                  
+                  </table>';
+                  ?>
                 </div>
               </div>
             </div>
@@ -80,7 +90,7 @@
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
                             <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a href="studentList.html"data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
                     </div>
             
