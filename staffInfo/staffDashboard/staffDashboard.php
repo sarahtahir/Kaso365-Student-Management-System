@@ -23,7 +23,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-	<a href="#" class="btn btn-info btn-lg">
+	<a href="../../Login/logout.php" class="btn btn-info btn-lg">
 	  <span class="w3-margin-right glyphicon glyphicon-log-out ">Log out</span>
 	</a>
 	</div>
