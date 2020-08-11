@@ -1,3 +1,8 @@
+<?php
+
+include '../header.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +27,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Add Staff</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -105,7 +110,7 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>Address</h4></label>
+                              <label for="text"><h4>Address</h4></label>
                               <input type="text" class="form-control" name="address" id="text" placeholder="text" title="enter your address.">
                           </div>
                       </div>
