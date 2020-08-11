@@ -1,3 +1,11 @@
+<?php
+  
+ session_start();
+
+
+//if (!(isset($_SESSION['staffID']) && $_SESSION['staffID'] != '')) {
+	//header ("Location: ../Login/Login.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,21 +33,21 @@
                                 <img src="https://i.ibb.co/rshckyB/car-key.png" alt="car-key" border="0">
                                 <h2 class="text-center">Forgot Password?</h2>
                                 <p>You can reset your password here.</p>
-                                <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                                <form id="register-form" action="checkQuesAns.php"autocomplete="off" class="form" method="post">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <select class="form-control" id="sel1">
+                                            <select name="question" class="form-control" id="sel1">
                                                 <option selected="true" disabled="disabled">Please Select Security Question</option>
-                                                <option>Which is your favorite movie?</option>
-                                                <option>What is your pet's name?</option>
-                                                <option>What is the name of your village?</option>
+                                                <option value="Which is your favorite movie?">Which is your favorite movie?</option>
+                                                <option value="What is your pets name?">What is your pet's name?</option>
+                                                <option value="What is the name of your village?">What is the name of your village?</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                            <input id="forgetAnswer" name="forgetAnswer" placeholder="Answer" class="form-control"  type="text">
+                                            <input id="forgetAnswer" name="answer" placeholder="Answer" class="form-control"  type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">

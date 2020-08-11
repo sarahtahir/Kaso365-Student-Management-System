@@ -20,14 +20,15 @@
 <html>
 <head>
      <meta charset="UTF-8">
-     <title>New Users</title>
+     <title>Update User</title>
      	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
  <div class="container">
  <!---heading---->
-     <header class="heading"> Insert New User </header><hr></hr>
+     <header class="heading"> Update User </header><hr></hr>
 	<!---Form starting----> 
+	<?
 	<form class="form" action="userProcess.php" method="post" id="registrationForm">
 	<div class="col-sm-12">
 		         <div class="row">
@@ -88,7 +89,7 @@
                                             <select name= "question" class="form-control" id="sel1">
                                                 <option selected="true" disabled="disabled">Please Select Security Question</option>
                                                 <option value="Which is your favorite movie?">Which is your favorite movie?</option>
-                                                <option value="What is your pets name?">What is your pet's name?</option>
+                                                <option value="What is your pets name?">What is your pets name?</option>
                                                 <option value="What is the name of your village?">What is the name of your village?</option>
                                             </select>
                                         </div>
@@ -112,6 +113,7 @@
 		     <div class="col-sm-12">
 		         <button type="submit" name="addUserbtn" class="btn btn-warning">Add</div>
 				 </form>
+				 ?>
 		   </div>
 		 </div>
 	 </div>	 

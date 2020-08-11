@@ -71,17 +71,18 @@ span.psw {
   </head>
   <body>
   	<!-- body code goes here -->
-	  <form action="/action_page.php" method="post">
+	  <form action="../../Reset Password/checkStaffID.php" method="post">
   <div class="imgcontainer">
     <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label for="uname"><b>Staff ID:</b></label>
-    <input type="text" placeholder="Enter Staff ID" name="uname" required>
+    <input type="text" placeholder="Enter Staff ID" name="staffID" required>
 
         
     <button type="submit">Login</button>
+	  </form>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -90,7 +91,7 @@ span.psw {
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
   </div>
-</form>
+
 
 
 
