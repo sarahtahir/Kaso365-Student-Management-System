@@ -37,19 +37,18 @@
 		            echo '<td>'.$row['name'].'</td>';
 				
 		            echo '<td>';
-				    echo '<form action="viewStudentInfo.php" method="post" >';
-			        echo "<input type='hidden' value='$studentID' name='studentIDView'>";
-					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form>
+				    
+					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
 					</td>'
 					;
 				
 					echo '<td>';
 				    echo '<form action="viewStudentInfo.php" method="post" >';
 			        echo "<input type='hidden' value='$studentID' name='studentIDView'>";
-					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form>
+					echo '<button type="submit" data-toggle="modal" data-target="#view" data-uid="1" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></form>
 					</td>'
 					;
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		            echo '<td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
 		        </tr>
 		        <tr id="d2"> </tr>
                 <tr id="d4"> </tr>'; 
