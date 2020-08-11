@@ -1,3 +1,6 @@
+<?php
+   include '../header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,14 +33,24 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h5>
-                                        NUR AIN NAIM
-                                    </h5>
-                                    <h6>
-                                        ADMIN
-                                    </h6>
-                                    <p class="proile-rating">ADMIN ID : <span> A18DW1013</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+							
+                          <?php
+							
+							
+                            include "profile.php";                            
+ 
+
+                            $username= $_SESSION['username'];
+                            $staffID = getstaffID($username);
+                            $qry = getProfileInfo($staffID);
+                            $row = mysqli_fetch_assoc($qry);
+							
+							        echo '<h5>'
+                                        .$row['name'].
+                                    '</h5>';
+                                    
+                                    echo '<p class="proile-rating">STAFF ID : <span>'.$row['staffID'].'</span></p>';
+                            echo '<ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
@@ -67,36 +80,37 @@
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row"></div>
-                                        <div class="row">
-                                            <div class="col-md-6">
+                                        <div class="row">';
+                                            echo '<div class="col-md-6">
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Nur Ain Naim</p>
+                                                <p>'.$row['name'].'</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
+                                            <div class="col-md-6">';
+                                             echo '<label>Position</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>nurainnaim2000@gmail.com</p>
+                                                <p>'.$row['position'].'</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Phone</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>012-321 6891</p>
+                                            <div class="col-md-6">';
+                                              echo '<p>'.$row['phonenum'].'</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Address</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>221 Jalan Datuk Keramat, 54000 Kuala Lumpur</p>
+                                            <div class="col-md-6">';
+                                               echo '<p>'.$row['address'].'</p>';
+										?>
                                             </div>
                                         </div>
                             </div>

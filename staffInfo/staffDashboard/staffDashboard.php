@@ -34,7 +34,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="w3-col s8 w3-bar">
       <span style="text-align:center;"> Welcome </span><br>
-      <a href="../../view my profile/view my profile.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="../../view my profile/view my profile.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
     </div>
   </div>

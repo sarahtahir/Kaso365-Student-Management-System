@@ -1,4 +1,7 @@
-student
+<?php
+
+include '../header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -115,7 +118,7 @@ body {font-family: Verdana, sans-serif;}
     </div>
     <div class="w3-col s8 w3-bar">
       <span>Welcome, <strong>Admin</strong></span><br>
-      <a href="../view my profile/view my profile.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="../view my profile/view my profile.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
     </div>
   </div>
@@ -125,7 +128,7 @@ body {font-family: Verdana, sans-serif;}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-   <a href="../view my profile/view my profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  My Profile</a>
+   <a href="../view my profile/view my profile.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  My Profile</a>
 	  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-key fa-fw"></i>  Change Password</a>
 	  <a href="../userInfo/userList/userList.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  User Management</a>
 	  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  School Management</a>
@@ -133,7 +136,7 @@ body {font-family: Verdana, sans-serif;}
 	  <a href="../studentInfo/studentList/studentList.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Students Information</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  School Spending</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Log Out</a><br><br>
+      <a href="../Login/logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Log Out</a><br><br>
   </div>
 </nav>
 

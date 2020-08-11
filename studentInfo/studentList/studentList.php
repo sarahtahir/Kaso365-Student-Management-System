@@ -8,7 +8,6 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
 </head>
 	<h3>Student List</h3>
-	<button type="submit" class="w3-display-right" value="Submit">
 <body>
 <div class="container">
 	<div class="row">
@@ -22,9 +21,8 @@
 		            <th>Delete</th>
 		        </tr>
 		    </thead>
-		    <tbody>
-			<?php	
-				
+		    <?php
+
 			include 'student.php';
 			
 			$studList = getListOfStudent();
@@ -58,8 +56,11 @@
 		    </tbody>
 		</table>
 	</div>
+	<form action="../addStudent/addStudent.html" method="post" id="form1">
+	<button class="button button1">Add Student</button>
+	</form>
 </div>
-<div id="edit" class="modal fade" role="dialog">
+<div id="edit" value class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

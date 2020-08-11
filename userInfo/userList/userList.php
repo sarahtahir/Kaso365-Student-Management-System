@@ -30,7 +30,9 @@ table{
 </style>
 <body>
 <h2> User List </h2>
-	<input type="submit" class ="w3-display-right" value="Submit">
+	<form action="../addUser/addUser.html" method="post">
+	<input type="submit" class="w3-display-right" value="Submit">
+	</form>
 <div class="container">
 	<div class="row">
 		<table class="table table-hover table-responsive">
