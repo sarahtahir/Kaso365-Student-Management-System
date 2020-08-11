@@ -22,34 +22,34 @@
 		        </tr>
 		    </thead>
 		    <tbody>
-		        <tr id="d1">
-		            <td>1</td>
-		            <td id="f1">Fill</td>
-		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-					<td><button type="button" data-toggle="modal" data-target="#view" data-uid="1" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></td>
+			<?php	
+				
+			include 'student.php';
+			
+			$studList = getListOfStudent();
+			$bil=1;
+			
+			while($row = mysqli_fetch_assoc($studList)) {	
+		
+		        echo '<tr>';
+				    $studentID = $row["studentID"];
+		            echo '<td>'.$row['studentID'].'</td>';
+		            echo '<td>'.$row['name'].'</td>';
+				
+		            echo '<td>';
+				    echo '<form action="viewStudentInfo.php" method="post" >';
+			        echo "<input type='hidden' value='$studentID' name='studentIDView'>";
+					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form>
+					</td>'
+					;
+				
+					echo '<td><button type="button" data-toggle="modal" data-target="#view" data-uid="1" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></td>
 		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
 		        </tr>
-		        <tr id="d2">
-		            <td>2</td>
-		            <td id="f2">Hilton</td>
-		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-					<td><button type="button" data-toggle="modal" data-target="#view" data-uid="2" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-				 <tr id="d3">
-		            <td>3</td>
-		            <td id="f3">Croco</td>
-		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="3" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-					<td><button type="button" data-toggle="modal" data-target="#view" data-uid="3" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="3" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
-				 <tr id="d4">
-		            <td>4</td>
-		            <td id="f4">Enon</td>
-		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="4" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
-					<td><button type="button" data-toggle="modal" data-target="#view" data-uid="4" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></td>
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="4" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
-		        </tr>
+		        <tr id="d2"> </tr>
+                <tr id="d4"> </tr>'; 
+			$bill++; }
+			?>
 		    </tbody>
 		</table>
 	</div>
