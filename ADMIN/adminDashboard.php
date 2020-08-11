@@ -1,4 +1,4 @@
-
+student
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -130,7 +130,7 @@ body {font-family: Verdana, sans-serif;}
 	  <a href="../userInfo/userList/userList.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  User Management</a>
 	  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  School Management</a>
       <a href="../staffInfo/staffList/staffList.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Staffs Information</a>
-	  <a href="../studentInfo/studentList/studentList.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Students Information</a>
+	  <a href="../studentInfo/studentList/studentList.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Students Information</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  School Spending</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
       <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-lock fa-fw"></i>  Log Out</a><br><br>
