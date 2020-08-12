@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Font Awesome Icons</title>
+<title>User List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -31,7 +31,7 @@ table{
 <body>
 <h2> User List </h2>
 	<form action="../addUser/addUser.html" method="post">
-	<input type="submit" class="w3-display-right" value="Submit">
+	<input type="submit" class="w3-display-right" value="Add User">
 	</form>
 <div class="container">
 	<div class="row">

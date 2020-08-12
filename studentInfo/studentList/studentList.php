@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<title>Student List</title>
 <meta charset="utf-8">
 <link href="Untitled-2.css" rel="stylesheet" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

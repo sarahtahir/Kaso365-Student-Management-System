@@ -31,7 +31,7 @@ table{
 </style>
 <body>
 <h2> Staff List </h2>
-	<form action="../addStaff.php" method="post">
+	<form action="../staffList/addStaff.php" method="post">
 	<input type="submit" class="w3-display-right" value="Submit">
 	</form>
 <div class="container">

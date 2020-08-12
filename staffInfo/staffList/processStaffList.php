@@ -8,4 +8,10 @@ if(isSet($_POST['viewStaffBtn']))
 	header('Location: viewStaffInfo.php');
 	}
 
+if(isSet($_POST['addStaffButton']))
+	{
+	addNewStaff();
+	header('Location: ..\staffList\staffList.php');
+	}
+
 ?>

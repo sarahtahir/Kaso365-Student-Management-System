@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
+    <title>Add new Staff</title>
     <!-- Bootstrap -->
 	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 	
@@ -62,7 +62,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="processStaff.php" method="post" id="registrationForm">
+                  <form class="form" action="processStaffList.php" method="post" id="registrationForm">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
