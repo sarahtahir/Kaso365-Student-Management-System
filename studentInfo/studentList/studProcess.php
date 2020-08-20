@@ -8,4 +8,13 @@ if(isSet($_POST['viewStudBtn']))
 	header('Location: viewStudentInfo.php');
 	}
 
+if(isSet($_POST['deleteStudBtn']))
+	{
+	deleteStudent();
+	echo "<script>";
+	echo " alert('Student has been deleted.');
+		</script>";
+	header( "refresh:1; url=studentList.php" );
+	}
+
 ?>
