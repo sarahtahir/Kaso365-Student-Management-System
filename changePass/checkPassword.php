@@ -3,12 +3,15 @@
 session_start();
 include "password.php";
 	
-$_SESSION['staffID'] = $_POST['staffID'];
+ 
 
-$staffID= $_POST['staffID']; 
+$staffID= $_SESSION['staffID']; 
 $password = $_POST['password'];
 
+
+
 resetPassword($password,$staffID);
-header('Location: ../Login/Login.html');
+header ("Location: ../index.html");
+
 
 ?>

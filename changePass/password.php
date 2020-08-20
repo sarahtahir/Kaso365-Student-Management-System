@@ -7,8 +7,10 @@ if(!$con)
 	echo  mysqli_connect_error();
 	exit;
 	}
-$sql= "UPDATE users SET password ='".$password."' WHERE staffID = '".$staffID ."'";
+$sql= "UPDATE kaso365.users SET users.password ='".$password."' WHERE users.staffID = '".$staffID ."'";
 $result=mysqli_query($con,$sql);
-$count=mysqli_num_rows($result); 	
+$count=mysqli_num_rows($result); 
+	
+	
 }
 ?>
