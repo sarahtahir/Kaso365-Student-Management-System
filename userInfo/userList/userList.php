@@ -68,9 +68,12 @@ table{
 				    echo '</form>';
 					 echo "</td>";
 					
-		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+	                			
+		            echo '<td><button type="submit" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
 					
-		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+					echo '<form action="userProc.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 
+		            echo '<td><button type="submit" name="deleteUserBtn" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></form></td>
 		        </tr>';
 				$bill++; }
 		       ?> 
