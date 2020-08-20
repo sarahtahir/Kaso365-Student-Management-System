@@ -68,9 +68,12 @@ table{
 				    echo '</form>';
 					 echo "</td>";
 				
-		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
+				     
+		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
 				
-		            echo '<td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>';
+	                echo '<form action="processStaffList.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 			
+   		            echo '<td><button type="submit" name="deleteStaffBtn" data-toggle="modal" data-target="#delete"  class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></form></td>';
 				
 		        echo '</tr>';
 					$bil++;
