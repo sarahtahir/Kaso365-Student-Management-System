@@ -11,7 +11,8 @@ if(isSet($_POST['viewStaffBtn']))
 if(isSet($_POST['addStaffButton']))
 	{
 	addNewStaff();
-	header('Location: ..\staffList\staffList.php');
+	staffPic();
+	header('Location: ..\staffList\staffList.php?uploadsuccess');
 	}
 
 if(isSet($_POST['deleteStaffBtn']))

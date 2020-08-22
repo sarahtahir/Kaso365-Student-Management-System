@@ -44,8 +44,10 @@
 
       <div class="text-center">
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
+		  
+		<form class="form" action="processStaffList.php" method="post"  enctype="multipart/form-data">
+        <h6>Upload a photo...</h6>
+        <input type="file" name="file" class="text-center center-block file-upload">
       </div></hr><br>
 
           
@@ -62,7 +64,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="processStaffList.php" method="post" id="registrationForm">
+                  
                       <div class="form-group">
                           
                           <div class="col-xs-6">

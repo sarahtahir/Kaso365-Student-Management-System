@@ -20,21 +20,11 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-            <form method="post">
+            
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://cdn5.vectorstock.com/i/1000x1000/72/74/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-							
-                          <?php
+						<?php
 							
 							
                             include "profile.php";                            
@@ -44,6 +34,22 @@
                             $staffID = getstaffID($username);
                             $qry = getProfileInfo($staffID);
                             $row = mysqli_fetch_assoc($qry);
+							
+							
+                            echo '<img src="../staffInfo/staffList/profilepic/pic'.$staffID.'.'.$row['fileExt'].'">';
+                            echo '<div class="file btn btn-lg btn-primary">
+                                Change Photo
+								<form action="editPic.php" method="post" enctype="multipart/form-data">';
+								echo "<input type='hidden' value='$staffID' name='staffIDPic'>";
+                                echo '<input type="file" name="file" onchange="this.form.submit()" />
+								</form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">';
+							
+                          
 							
 							        echo '<h5>'
                                         .$row['name'].
