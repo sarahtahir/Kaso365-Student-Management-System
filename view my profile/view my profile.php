@@ -36,7 +36,8 @@
                             $row = mysqli_fetch_assoc($qry);
 							
 							
-                            echo '<img src="../staffInfo/staffList/profilepic/pic'.$staffID.'.'.$row['fileExt'].'">';
+                            
+                            echo '<img src="../staffInfo/staffList/profilepic/pic'.$staffID.'.'.$row['fileExt'].'?t='.time().'">';
                             echo '<div class="file btn btn-lg btn-primary">
                                 Change Photo
 								<form action="editPic.php" method="post" enctype="multipart/form-data">';
