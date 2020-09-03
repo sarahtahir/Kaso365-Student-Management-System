@@ -9,11 +9,20 @@ if(!$con)
 	echo  mysqli_connect_error();
 	exit;
 	}
-$sql= "SELECT * FROM users where username = '".$username ."' and password ='".$password."'";
+	
+$sql= "SELECT * FROM users where username = '".$username."'"; 
 $result=mysqli_query($con,$sql);
 $count=mysqli_num_rows($result); //check how many matching record - should be 1 if correct
 if($count == 1){
-	return true;//username and password is valid
+	while($row = mysqli_fetch_array($result)){
+		if(password_verify($password, $row['password'])){
+			return true;
+		}
+		else {
+			return false;
+			
+		}
+	}
 }
 else
 	{
