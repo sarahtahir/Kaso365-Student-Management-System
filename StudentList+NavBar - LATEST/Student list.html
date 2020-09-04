@@ -83,9 +83,9 @@ body {
   }
 }
 </style>
-	<title> Staff List </title>
+	<title> Student List </title>
 </head>
-	<h2 class="text-center">Staff List</h2>
+	<h2>Student List</h2>
 <body>
 	
 <div class="container">
@@ -95,62 +95,51 @@ body {
 		<table class="table table-hover table-responsive">
 		<div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="#about">Staff Attendance</a>
+  <a href="#about">Student Attendance</a>
   <div class="search-container">
-    <form action="" method="post">
-      <input type="text" placeholder="Search Name" name="name">
-      <button type="submit" name="showAll"><i class="fa fa-remove"></i></button>
-	  <button type="submit" name="searchName"><i class="fa fa-search"></i></button>
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-remove"></i></button>
+	  <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-	  <?php
-	  include 'staff.php';
-		if (isSet($_POST['searchName'])){
-			$staffList = findName();
-		}
-	    else
-		$staffList = getListOfStaff();
-	  ?>
   </div>
 </div>
 		   <thead bgcolor="#F1C40F">  
-			   <tr>
-			    <th>Staff ID</th>
-				<th>Name</th>
-				<th>View Info</th>
-				<th>Update</th>
-				<th>Delete</th>
-			   </tr>
-			</thead>  
-		        	<?php 
+		        <?php
+
+			include 'student.php';
 			
-			
+			$studList = getListOfStudent();
 			$bil=1;
 			
-			while($row = mysqli_fetch_assoc($staffList)) {		    
+			while($row = mysqli_fetch_assoc($studList)) {	
+		
+		        echo '<tr>';
+				    $studentID = $row["studentID"];
+		            echo '<td>'.$row['studentID'].'</td>';
+		            echo '<td>'.$row['name'].'</td>';
 				
-		        echo "<tr>";
-				$staffID = $row["staffID"];
-		            echo "<td>".$row["staffID"]."</td>";
-		            echo "<td>".$row["name"]."</td>";
-		            echo "<td>";
+		            echo '<td>';
 				    
-				    echo '<form action="viewStaffInfo.php" method="post" >';
-			        echo "<input type='hidden' value='$staffID' name='staffIDView'>";
-					echo '<button type="submit" data-toggle="modal" data-target="#view" name="viewStaffBtn" class="view btn btn-warning btn-sm"><span class="glyphicon glyphicon-user"></span></button>';
-				    echo '</form>';
-					 echo "</td>";
+					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+					</td>'
+					;
 				
-				     
-		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
-				
-	                echo '<form action="processStaffList.php" method="post" >';
-			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 			
-   		            echo '<td><button type="submit" name="deleteStaffBtn" data-toggle="modal" data-target="#delete"  class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></form></td>';
-				
-		        echo '</tr>';
-					$bil++;
-			}
-              ?> 
+					echo '<td>';
+				    echo '<form action="viewStudentInfo.php" method="post" >';
+			        echo "<input type='hidden' value='$studentID' name='studentIDView'>";
+					echo '<button type="submit" data-toggle="modal" data-target="#view" data-uid="1" class="delete btn btn-info btn-sm"><span class="glyphicon glyphicon glyphicon-eye-open"></span></button></form>
+					</td>'
+					;
+
+				    echo '<form action="studProcess.php" method="post" >';
+			        echo "<input type='hidden' value='$studentID' name='studentIDDelete'>";
+		            echo '<td><button type="submit" name="deleteStudBtn" data-toggle="modal" data-target="#delete"  class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></form></td>
+		        </tr>
+		        <tr id="d2"> </tr>
+                <tr id="d4"> </tr>'; 
+			$bill++; }
+			?>
 		    </tbody>
 		</table>
 	 <br/>

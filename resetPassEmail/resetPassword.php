@@ -13,6 +13,7 @@ if(mysqli_num_rows($getEmailQuery)== 0) {
 
 if (isset($_POST['password'])){
 	$password = $_POST['password'];
+	$password = password_hash($password, PASSWORD_DEFAULT);
 	
 	$row= mysqli_fetch_array($getEmailQuery);
 	$email = $row['email'];

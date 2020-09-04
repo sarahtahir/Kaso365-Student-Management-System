@@ -1,10 +1,25 @@
+<?php
+
+include 'user.php';
+$staffID = $_POST['staffIDUpdate'];
+$qry = getUserInformation($staffID);
+$row = mysqli_fetch_assoc($qry);
+
+ $username = $row['username'];
+$email = $row['email'];
+$userType = $row['userType'];
+$question = $row['question'];
+$answer = $row['answer'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
+    <title>Update User</title>
     <!-- Bootstrap -->
 	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 	
@@ -28,7 +43,7 @@
  <!---heading---->
      <header class="heading"> Update User </header><hr></hr>
 	<!---Form starting----> 
-	<?
+	
 	<form class="form" action="userProcess.php" method="post" id="registrationForm">
 	<div class="col-sm-12">
 		         <div class="row">
@@ -37,11 +52,9 @@
 				  <div class="col-xs-8">
 			             <div class="form-group">
                                         <div class="input-group">
-                                            <select name="userType" class="form-control" id="sel1">
-                                                <option selected="true" disabled="disabled">Please Select User Type</option>
-                                                <option value="Admin">Admin</option>
-                                                <option value="Staff">Staff</option>
-                                            </select>
+                                            <?php
+											  showUserType($userType);
+											?>
 											<br> <br>
                                         </div>
 				 </div>
@@ -52,7 +65,13 @@
 				     <div class="col-xs-4">
 		 	              <label class="pass">Staff ID :</label></div>
 				  <div class="col-xs-8">
-			            <input type="text" name="staffID" id="ID" placeholder="Enter Your ID" class="form-control ">
+			          <?php  
+					  
+					  echo "<input type='text' name='newStaffID' value='$staffID' placeholder='Enter Your ID' class='form-control'>";
+					  
+					  echo "<input type='hidden' name='staffID' value='$staffID' >";
+					  
+					  ?>
 					  <br> <br>
 				 </div>
 		 
@@ -62,7 +81,9 @@
 			     <div class="col-xs-4">
                      <label class="pass">Username :</label></div>
 				<div class ="col-xs-8">	 
-		             <input type="text" name="uname"  placeholder="Enter your Username" class="form-control">
+		             <?php
+					echo "<input type='text' name='username' value='$username' placeholder='Enter your Username' class='form-control'>";
+					?>
 				 </div>
           </div>
 			  <br> <br>
@@ -70,9 +91,11 @@
 		<div class="col-sm-12">
 		         <div class="row">
 				     <div class="col-xs-4">
-		 	              <label class="pass">Password :</label></div>
+		 	              <label class="pass">Email :</label></div>
 				  <div class="col-xs-8">
-			             <input type="text" name="pass" id="PN" placeholder="Enter your Password" class="form-control">
+			             <?php
+					  echo "<input type='text' name='email' value='$email'  placeholder='Enter your Email' class='form-control'>";
+					  ?>
 				 </div>
           </div>
 			
@@ -86,12 +109,9 @@
 				  <div class="col-xs-8">
 			             <div class="form-group">
                                         <div class="input-group">
-                                            <select name= "question" class="form-control" id="sel1">
-                                                <option selected="true" disabled="disabled">Please Select Security Question</option>
-                                                <option value="Which is your favorite movie?">Which is your favorite movie?</option>
-                                                <option value="What is your pets name?">What is your pets name?</option>
-                                                <option value="What is the name of your village?">What is the name of your village?</option>
-                                            </select>
+                                            <?php
+											showQuestion($question);
+											?>
                                         </div>
 				 </div>
 					<br>
@@ -101,9 +121,11 @@
 		<div class="col-sm-12">
 		         <div class="row">
 				     <div class="col-xs-4">
-		 	              <label class="pass">Answer :</label></div>
+		 	              <label class="answer">Answer :</label></div>
 				  <div class="col-xs-8">
-			             <input type="text" name="answer" id="position" placeholder="Enter your Answer" class="form-control">
+			             <?php
+					  echo "<input type='text' name='answer' value='$answer' placeholder='Enter your Answer' class='form-control'>";
+					 ?>
 				 </div>
           </div>
 		  </div>
@@ -111,7 +133,7 @@
 			
 		  	 </div>
 		     <div class="col-sm-12">
-		         <button type="submit" name="addUserbtn" class="btn btn-warning">Add</div>
+		         <button type="submit" name="updateUserBtn" class="btn btn-warning">Update</div>
 				 </form>
 				 ?>
 		   </div>

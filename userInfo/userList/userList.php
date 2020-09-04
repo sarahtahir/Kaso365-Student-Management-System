@@ -1,52 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>User List</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta charset="utf-8">
+<link href="Untitled-2.css" rel="stylesheet" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>User List</title>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+* {box-sizing: border-box;}
 
-</head>
-<style>
-
-<link href="Untitled-2.css" rel="stylesheet" type="text/css">
-	
-table{
-    font-family:'Calibri';
-    font-size:15px;
-    background-color:#fff;
-    color:#333;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.modal-header{
-    background-color:#333;
-    color:#fff;
+
+.topnav {
+  overflow: hidden;
+  background-color: #54104B ;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #F1C40F  ;
+  color: white;
+}
+
+.topnav a.active {
+  background-color:#E58A88 ;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #E58A88 ;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background:#F1C40F  ;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #D6B0DD ;  
+  }
 }
 </style>
+	<title> Student List </title>
+</head>
+	<h2 class="text-center">User List</h2>
 <body>
-<h2> User List </h2>
-	<form action="../addUser/addUser.html" method="post">
-	<input type="submit" class="w3-display-right" value="Add User">
-	</form>
+	
 <div class="container">
+	
 	<div class="row">
+		
 		<table class="table table-hover table-responsive">
-		    <thead>
-		        <tr>
-		            <th>ID</th>
-		            <th>Name</th>
-                    <th>View</th>
-		            <th>Update</th>
-		            <th>Delete</th>
-		        </tr>
-		    </thead>
-		    <tbody>
-				<?php
+		<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-remove"></i></button>
+	  <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+		   <thead bgcolor="#F1C40F">  
+			   <tr>
+			    <th>Staff ID</th>
+				<th>Name</th>
+				<th>View Info</th>
+				<th>Update</th>
+				<th>Delete</th>
+			   </tr>
+			</thead>
+			   
+		        	<?php
 				
 				include 'user.php';
 			
@@ -68,8 +136,9 @@ table{
 				    echo '</form>';
 					 echo "</td>";
 					
-	                			
-		            echo '<td><button type="submit" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
+	                echo '<form action="../updateUser/updateUserForm.php" method="post" >';	
+				    echo "<input type='hidden' value='$staffID' name='staffIDUpdate'>";
+		            echo '<td><button type="submit" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form></td>';
 					
 					echo '<form action="userProc.php" method="post" >';
 			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 
@@ -79,42 +148,10 @@ table{
 		       ?> 
 		    </tbody>
 		</table>
-	</div>
-</div>
-<div id="edit" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h4 class="modal-title">Update Data</h4>
-      </div>
-      <div class="modal-body">
-           <input id="fn" type="text" class="form-control" name="fname" placeholder="Name">
-      </div>
-      <div class="modal-footer">
-      <button type="button" id="up" class="btn btn-warning" data-dismiss="modal">View</button>
-        <button type="button" id="up" class="btn btn-warning" data-dismiss="modal">Update</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="delete" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h4 class="modal-title">Delete Data</h4>
-      </div>
-      <div class="modal-body">
-        <strong>Are you sure you want to delete this data?</strong>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="del" class="btn btn-danger" data-dismiss="modal">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+	 <br/>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
+		
+
+
 </body>
 </html>

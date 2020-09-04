@@ -1,32 +1,131 @@
 <!doctype html>
 <html>
 <head>
-<title>Student List</title>
 <meta charset="utf-8">
 <link href="Untitled-2.css" rel="stylesheet" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
-</head>
-	<h3>Student List</h3>
-<body>
-<div class="container">
-	<div class="row">
-		<table class="table table-hover table-responsive">
-		    <thead>
-		        <tr>
-		            <th>Student ID</th>
-		            <th>Name</th>
-		            <th>Edit</th>
-					<th>View</th>
-		            <th>Delete</th>
-		        </tr>
-		    </thead>
-		    <?php
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+* {box-sizing: border-box;}
 
-			include 'student.php';
-			
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #54104B ;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #F1C40F  ;
+  color: white;
+}
+
+.topnav a.active {
+  background-color:#E58A88 ;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #E58A88 ;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background:#F1C40F  ;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #D6B0DD ;  
+  }
+}
+</style>
+	<title> Student List </title>
+</head>
+	<h2 class="text-center">Student List</h2>
+<body>
+	
+<div class="container">
+	
+	<div class="row">
+		
+		<table class="table table-hover table-responsive">
+		<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">Student Attendance</a>
+  <div class="search-container">
+	  
+    <form action="" method=post>
+      <input type="text" placeholder="Search Name" name="name">
+      <button type="submit" name="showAll" ><i class="fa fa-remove"></i></button>
+	  <button type="submit" name="searchName" ><i class="fa fa-search"></i></button>
+    </form>
+	  <?php
+	    include 'student.php';
+			if (isSet($_POST['searchName'])){
+				$studList = findName();
+			}
+	       else
 			$studList = getListOfStudent();
+	  ?>
+  </div>
+</div>
+		   <thead bgcolor="#F1C40F">  
+			   <tr>
+			    <th>Student ID</th>
+				<th>Name</th>
+				<th>Update</th>
+				<th>View Info</th>
+				<th>Delete</th>
+			   </tr>
+			</thead>  
+			   
+		        <?php
+
+			
 			$bil=1;
 			
 			while($row = mysqli_fetch_assoc($studList)) {	
@@ -37,8 +136,9 @@
 		            echo '<td>'.$row['name'].'</td>';
 				
 		            echo '<td>';
-				    
-					echo '<button type="submit" data-toggle="modal" name="viewStudBtn" data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+				    echo '<form action="../updateStudent/updateStudentForm.php" method="post" >';
+			        echo "<input type='hidden' value='$studentID' name='studentIDUpdate'>"; 
+					echo '<button type="submit" data-toggle="modal"  data-target="#edit"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form>
 					</td>'
 					;
 				
@@ -59,46 +159,10 @@
 			?>
 		    </tbody>
 		</table>
-	</div>
-	<form action="../addStudent/addStudent.html" method="post" id="form1">
-	<button class="button button1">Add Student</button>
-	</form>
-</div>
-<div id="edit" value class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h4 class="modal-title">Update Data</h4>
-      </div>
-      <div class="modal-body">
-           <input id="fn" type="text" class="form-control" name="fname" placeholder="First Name">
-           <input id="ln" type="text" class="form-control" name="fname" placeholder="Last Name">
-           <input id="mn" type="text" class="form-control" name="fname" placeholder="Middle Name">
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="up" class="btn btn-warning" data-dismiss="modal">Update</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="delete" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h4 class="modal-title">Delete Data</h4>
-      </div>
-      <div class="modal-body">
-        <strong>Are you sure you want to delete this data?</strong>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="del" class="btn btn-danger" data-dismiss="modal">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+	 <br/>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
+		
+
+
 </body>
 </html>

@@ -3,9 +3,9 @@
 include "user.php";
 
 
-if(isSet($_POST['addUserbtn']))
+if(isSet($_POST['updateUserBtn']))
 	{
-	addNewUser();	
+	updateUser();	
 	header('Location: ../userList/userList.php');
 	}
 
