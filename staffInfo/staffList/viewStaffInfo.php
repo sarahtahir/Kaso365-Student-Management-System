@@ -35,12 +35,13 @@
 			include 'staff.php';
 			$qry = getStaffInfo();
 	        $row = mysqli_fetch_assoc($qry);	
+			$staffID = $row['staffID'];
 				
             echo '<h3 class="panel-title">'.$row['name'].'</h3>';
             echo '</div>';
             echo '<div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://i.dlpng.com/static/png/1114993_preview_preview.png" class="img-circle img-responsive"> </div>';
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="profilepic/pic'.$staffID.'.'.$row['fileExt'].'?t='.time().'" class="img-circle img-responsive"> </div>';
                 
                 
                 echo '<div class=" col-md-9 col-lg-9 ">';

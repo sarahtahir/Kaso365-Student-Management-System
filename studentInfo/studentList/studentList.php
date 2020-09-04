@@ -160,7 +160,7 @@ body {
 		    </tbody>
 		</table>
 	 <br/>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="../addStudent/addStudent.html"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
 		
 
 
