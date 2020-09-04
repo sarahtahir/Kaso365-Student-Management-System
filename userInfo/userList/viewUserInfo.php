@@ -54,10 +54,7 @@
                         <td>Username:</td>';
                         echo '<td>'.$row['username'].'</td>';
                       echo '</tr>';
-                      echo '<tr>
-                        <td>Password</td>';
-                        echo '<td>'.$row['password'].'</td>';
-                      echo '</tr>';
+                      
                    
                        echo '<tr>
                         <td>Question</td>';

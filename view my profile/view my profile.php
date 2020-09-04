@@ -63,24 +63,18 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+                    </div>',
+					
+                    '<div class="col-md-2">',
+					    '<form action="editInfo/editInfoForm.php" method="post">',
+						"<input type='hidden' value='$staffID' name='staffID'/>",
+                        '<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></form>',
+                    '</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>SKILLS</p>
-                            <a href="">Photography</a><br/>
-                            <a href="">Video Editing</a><br/>
-                            <a href="">Photo Editing</a>
-                            <p>LANGUAGE</p>
-                            <a href="">Malay</a><br/>
-                            <a href="">English</a><br/>
-                            <a href="">Hangul</a><br/>
-                            <a href="">Japaness</a><br/>
-                            <a href="">Mandrin</a><br/>
+                            
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -131,7 +125,7 @@
             </form>           
         </div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-3.4.1.min.js"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->

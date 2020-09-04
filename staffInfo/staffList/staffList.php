@@ -140,8 +140,9 @@ body {
 				    echo '</form>';
 					 echo "</td>";
 				
-				     
-		            echo '<td><button type="button" data-toggle="modal" data-target="#update" data-uid="1"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>';
+				    echo '<form action="../updateStaff/updateStaffForm.php" method="post" >';
+			        echo "<input type='hidden' value='$staffID' name='staffIDUpdate'>"; 
+		            echo '<td><button type="submit" data-toggle="modal" data-target="#update" data-uid="1"  class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form></td>';
 				
 	                echo '<form action="processStaffList.php" method="post" >';
 			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 			
@@ -154,7 +155,7 @@ body {
 		    </tbody>
 		</table>
 	 <br/>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="addStaff.php"><span class="glyphicon glyphicon-plus-sign"></span> Add Staff </a>
 		
 
 

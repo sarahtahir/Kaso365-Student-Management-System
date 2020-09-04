@@ -83,7 +83,7 @@ body {
   }
 }
 </style>
-	<title> Student List </title>
+	<title> User List </title>
 </head>
 	<h2 class="text-center">User List</h2>
 <body>
@@ -97,11 +97,20 @@ body {
   <a class="active" href="#home">Home</a>
   
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-remove"></i></button>
-	  <button type="submit"><i class="fa fa-search"></i></button>
+    <form action="" method="post">
+      <input type="text" placeholder="Search Staff ID" name="staffIDFind">
+      <button type="submit" name="displayAll"><i class="fa fa-remove"></i></button>
+	  <button type="submit" name="findName"><i class="fa fa-search"></i></button>
     </form>
+	  <?php
+	  include 'user.php';
+	  
+	  if (isSet($_POST['findName'])){
+		  $userList= findName();
+	  }
+	  else
+	  $userList = getListOfUser();
+	  ?>
   </div>
 </div>
 		   <thead bgcolor="#F1C40F">  
@@ -116,9 +125,7 @@ body {
 			   
 		        	<?php
 				
-				include 'user.php';
-			
-			$userList = getListOfUser();
+				
 			$bil=1;
 			
 			while($row = mysqli_fetch_assoc($userList)) {	
@@ -149,7 +156,7 @@ body {
 		    </tbody>
 		</table>
 	 <br/>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Student </a>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="../addUser/addUser.html"><span class="glyphicon glyphicon-plus-sign"></span> Add User </a>
 		
 
 

@@ -44,4 +44,15 @@ if(!$con)
   
 };
 
+function findName(){
+	$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	if (mysqli_connect_errno()) {
+		die("Failed to connect to MySQL: " .mysqli_connect_error());
+	}
+	$sql = "select * from users where staffID like '%".$_POST['staffIDFind']."%'";
+    
+    $qry = mysqli_query($con,$sql);//run query
+    return $qry;  //return query
+}
+
 ?>

@@ -32,4 +32,42 @@ function getProfileInfo($staffID)
 	return $qry;
 }
 
+function getStaffInformation($staffID)
+{
+//create connection
+$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+$sql = "select * from staff where staffID = '".$staffID."'";
+
+$qry = mysqli_query($con,$sql);//run query
+return $qry;  //return query
+}
+
+function updateStaffInfo(){
+$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	
+$oldStaffID = $_POST['staffID'];
+$newStaffID = $_POST['newStaffID'];
+$name = $_POST['name'];
+$gender = $_POST['gender'];
+$BOD = $_POST['BOD'];
+$address = $_POST['address'];
+$position = $_POST['position'];
+$phonenum = $_POST['phonenum'];
+	
+$sql = "UPDATE staff SET staffID='$newStaffID', name='$name', gender ='$gender', BOD='$BOD', address='$address', position='$position', phonenum ='$phonenum' WHERE staffID='$oldStaffID'";
+
+$qry= mysqli_query($con,$sql);
+return $qry;	
+}
+
 ?>

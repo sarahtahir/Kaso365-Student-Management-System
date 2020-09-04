@@ -84,11 +84,11 @@
 					 <div class="logo mb-3">
 						 <div class="col-md-12 text-center">
 							<div class="imgcontainer">
-    <img src="KasoLogo.png" alt="KasoLogo" class="KasoLogo"  width="150" height="150" class="center">
+    <img src="Login/kasologo1.png" alt="KasoLogo" class="KasoLogo"  width="150" height="150" class="center">
   </div>
 						 </div>
 					</div>
-                   <form action="" method="post" name="login">
+                   <form action="Login/checkLogin.php" method="post" name="login">
                            <div class="form-group">
                               <label for="exampleInputUsername">Username</label>
                               <input type="usernmae" name="username"  class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter Username">
@@ -98,23 +98,16 @@
                               <input type="password" name="password" id="password"  class="form-control" aria-describedby="usernameHelp" placeholder="Enter Password">
                            </div>
                      
-                           <div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Admin</label> 
-							</div>
-                            <div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">User</label> 
-							</div>
+                           
                             <br>
                            <div class="col-md-12 text-center ">
-                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button></form>
                            </div>
                            <div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
+						<a href="resetPassEmail/emailForm.html">Forgot your password?</a>
 					</div>
 
-                        </form>
+                        
                      </div>
 			</div>
 		</div>

@@ -110,6 +110,7 @@ body {font-family: Verdana, sans-serif;}
       <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="../view my profile/view my profile.php" class="w3-bar-item w3-button"><i class="fa fa-user fa-fw"></i> My Profile</a>
+		<a href="../resetPassEmail/emailForm.html" class="w3-bar-item w3-button"><i class="fa fa-key fa-fw"></i>Change Password</a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> School Management</a>
         <a href="../userInfo/userList/userList.php" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> User Management</a>
         <a href="../studentInfo/studentList/studentList.php" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> Students Management</a>
@@ -117,7 +118,7 @@ body {font-family: Verdana, sans-serif;}
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-users fa-fw"></i> Students Information</a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-money fa-fw"></i> School Spending</a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog fa-fw"></i> Settings</a>
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-lock fa-fw"></i> Log Out</a>    
+        <a href="../Login/logout.php" class="w3-bar-item w3-button"><i class="fa fa-lock fa-fw"></i> Log Out</a>    
       </div>
     </div>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
