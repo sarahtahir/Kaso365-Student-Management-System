@@ -14,7 +14,8 @@ $isValidUser = validatePassword($username,$password);
 if($isValidUser)
 	{
 	$userType=getUserType($username);
-	if($userType =='Admin')
+	$_SESSION['userType']= $userType;
+	if($userType =='Admin')		
 		header("location:../ADMIN/adminDashboard.php"); // redirect to admin page
 	else if($userType =='Staff')
 		header("location: ../staffInfo/staffDashboard/staffDashboard.php"); // redirect to staff menu menu page
