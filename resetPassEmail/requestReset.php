@@ -14,6 +14,7 @@ if (isset($_POST['email'])){ //this works
 	
 $emailTo = $_POST['email'];
 $code = uniqid(true);
+
 $qry= mysqli_query($con, "INSERT INTO resetpass(code,email) VALUES ('$code','$emailTo')");
 if (!$qry){
 	exit("Error sending mail");
@@ -30,7 +31,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'kaso365ms@gmail.com';                     // SMTP username
-    $mail->Password   = '@kaso365System';                               // SMTP password
+    $mail->Password   = '@Hikaru12';                               // SMTP password
     $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 

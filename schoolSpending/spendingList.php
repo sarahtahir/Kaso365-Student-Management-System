@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "../navBar/spendingNavBar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,7 +256,8 @@ $(document).ready(function(){
 		
 		console.log(data);
 		$('#deleteID').val(data[0]);
-	});	});
+	});	
+});
 
 </script>
 </head>
@@ -262,11 +267,16 @@ $(document).ready(function(){
 			<div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-3">
 							<h2>Spending List</h2>
 						</div>
+						
 						<div class="col-xs-6">
 							<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Spending</span></a>
+													
+						</div>
+						<div class="col-xs-2">
+							<a href="#reportModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">article</i> <span>Generate PDF</span></a>
 													
 						</div>
 					</div>
@@ -347,12 +357,64 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	
+	<!-- Generate report Modal HTML -->
+	<div id="reportModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form target="_blank" action="../report/file.php" method="post">
+					<div class="modal-header">						
+						<h4 class="modal-title">Generate report</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+					     <label>Month</label>
+					      <select class="form-control" name="month" >
+		                       <option value="January">January</option>
+		                       <option value="February">February</option>
+		                       <option value="March">March</option>
+							   <option value="April">April</option>	
+							   <option value="May">May</option>	
+							   <option value="June">June</option>	
+							   <option value="July">July</option>	
+							   <option value="August">August</option>	
+							   <option value="September">September</option>	
+							   <option value="October">October</option>	
+							   <option value="November">November</option>
+							   <option value="December">December</option>	
+	                       </select>	
+                     
+                   </div>
+					<div class="form-group">
+					<label>Year</label>
+				   <select class="form-control" name="year" id="year">
+		                       <Option value="2015">2015</Option>
+		                       <option value="2016">2016</option>
+		                       <option value="2017">2017</option>
+		                       <option value="2018">2018</option>
+		                       <option value="2019">2019</option>
+		                       <option value="2020">2020</option>
+		                       <option value="2021">2021</option>
+		                       <option value="2022">2022</option>
+		                       <option value="2023">2023</option>
+		                       <option value="2024">2024</option>
+						</select>
+					</div>
+										
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-success" name="genBtn" value="Generate">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- Delete Modal HTML -->
 	<div id="deleteModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="spending.php" method="post">
+				<form  action="spending.php" method="post">
 					<div class="modal-header">						
 						<h4 class="modal-title">Delete Spending</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
