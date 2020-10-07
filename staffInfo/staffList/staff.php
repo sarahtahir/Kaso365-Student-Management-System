@@ -1,9 +1,9 @@
 <?php
 
 //addNewStud function================== it works
-function addNewStaff()
+if (isset($_POST['addBtn']))
 {
-$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -22,15 +22,18 @@ if(!$con)
 	VALUES ('$staffID','$name','$gender','$BOD','$phonenum','$address', '$position')";
  
 //echo $sql;
-	$qry = mysqli_query($con,$sql);
+$qry = mysqli_query($con,$sql);
+
+staffPic();
  
+header('Location: staffList.php');	
 }
 
 //getListOfStaff function ==================// works too
 function getListOfStaff()
 {
 //create connection
-$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -43,7 +46,7 @@ return $qry;  //return query
 
 function getStaffInfo()
 {
-	$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 	if (mysqli_connect_errno()) {
 		die("Failed to connect to MySQL: " .mysqli_connect_error());
 	}
@@ -54,26 +57,30 @@ function getStaffInfo()
 	return $qry;
 }
 
-function deleteStaff()
+if (isset($_POST['deleteBtn']))
 {
-$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo mysqli_connect_error();
 	exit;
 	}
 
- $staffID = $_POST['staffIDDelete'];
+ $staffID = $_POST['deleteID'];
   
   $sql="delete from staff where staffID ='".$staffID."'";
   $qry = mysqli_query($con,$sql);
-  
+	
+  echo "<script>";
+	echo " alert('Staff has been deleted.');
+		</script>";
+	header( "refresh:1; url=staffList.php" );
   
 };
 
 function staffPic()
 {
-$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -108,7 +115,7 @@ $staffID = $_POST['staffID'];
 }
 
 function findName(){
-	$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 	if (mysqli_connect_errno()) {
 		die("Failed to connect to MySQL: " .mysqli_connect_error());
 	}
