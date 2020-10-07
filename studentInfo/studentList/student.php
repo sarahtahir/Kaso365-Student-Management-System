@@ -1,9 +1,9 @@
 <?php
 
 //addNewStud function==================
-function addNewStud()
+if (isset($_POST['addBtn']))
 {
-$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -23,14 +23,14 @@ if(!$con)
  
 //echo $sql;
 	$qry = mysqli_query($con,$sql);
- 
+ header('Location:studentList.php');
 }
 
 //getListOfStudent function ==================
 function getListOfStudent()
 {
 //create connection
-$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -43,7 +43,7 @@ return $qry;  //return query
 
 function getStudentInfo()
 {
-	$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 	if (mysqli_connect_errno()) {
 		die("Failed to connect to MySQL: " .mysqli_connect_error());
 	}
@@ -54,25 +54,28 @@ function getStudentInfo()
 	return $qry;
 }
 
-function deleteStudent()
+if (isset($_POST['deleteBtn']))
 {
-$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo mysqli_connect_error();
 	exit;
 	}
 
- $studentID = $_POST['studentIDDelete'];
+ $studentID = $_POST['deleteID'];
   
   $sql="delete from studentinfo where studentID ='".$studentID."'";
   $qry = mysqli_query($con,$sql);
-  
+  echo "<script>";
+	echo " alert('Student has been deleted.');
+		</script>";
+	header( "refresh:1; url=studentList.php" );
   
 };
 
 function findName(){
-	$con = mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 	if (mysqli_connect_errno()) {
 		die("Failed to connect to MySQL: " .mysqli_connect_error());
 	}

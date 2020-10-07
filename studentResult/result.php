@@ -14,7 +14,7 @@ $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
 
-function addMarks(){
+if (isset($_POST['addBtn'])){
 	
  $studList= getListStudent(); 
 
@@ -40,10 +40,11 @@ if(!$con)
 	}	
 	 $query = "INSERT INTO results(studentID, name, exam, year, sirah, akhlak, ibadah, akidah, jawi, alquran) VALUES ('$studentID','$name','$exam', '$year' , '$sirah','$akhlak', '$ibadah', '$akidah', '$jawi', '$alquran')";
 	 
-	
+
 $sql = mysqli_query($con,$query);//run query
 
  }
+header('Location:studentResultList.php');
 }
 
 function getMarks(){
@@ -62,7 +63,9 @@ return $qry;  //return query
 }
 
 function getUpdateMarks(){
+	
 session_start();
+
 $con = mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
@@ -74,15 +77,17 @@ $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query	
 }
 
-function updateMarks(){
+if (isset($_POST['updateBtn'])){
+	
+session_start();	
 $studList= getListStudent(); 
 
  while($row = mysqli_fetch_assoc($studList)) {
 	 
 	$studentID = $row['studentID']; //no problem here
     $name = $row['name'];
-	$exam = $_POST['exam'];
-	$year = $_POST['year'];
+	$exam = $_SESSION['exam'];
+	$year = $_SESSION['year'];
 	$sirah=	$_POST["sirah".$row['studentID'].""];
 	$akhlak= $_POST["akhlak".$row['studentID'].""];
 	$ibadah= $_POST["ibadah".$row['studentID'].""];
@@ -97,9 +102,12 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}	
-	 $query = "UPDATE results SET sirah='$sirah', akhlak='$akhlak', ibadah='$ibadah', akidah='$akidah', jawi='$jawi', alquran='$alquran' WHERE studentID='$studentID'";	 
+	 $query = "UPDATE results SET sirah='$sirah', akhlak='$akhlak', ibadah='$ibadah', akidah='$akidah', jawi='$jawi', alquran='$alquran' WHERE studentID='$studentID' AND exam='$exam' AND year='$year'";	 
 	
 $sql = mysqli_query($con,$query);//run query
 
  }
+session_destroy();
+	header('Location:studentResultList.php');
+	
 }
