@@ -1,5 +1,5 @@
 <?php
-   include '../header.php';
+   include '../navBar/myProfileNavBar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

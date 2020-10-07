@@ -1,129 +1,205 @@
-<!doctype html>
-<html>
-<head>
+<?php
+session_start();
+include "../../navBar/userListNavBar.php";
+?>
+<!DOCTYPE html>
+<html lang="en"><head>
 <meta charset="utf-8">
-<link href="Untitled-2.css" rel="stylesheet" type="text/css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #54104B ;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #F1C40F  ;
-  color: white;
-}
-
-.topnav a.active {
-  background-color:#E58A88 ;
-  color: white;
-}
-
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #E58A88 ;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.topnav .search-container button:hover {
-  background:#F1C40F  ;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #D6B0DD ;  
-  }
-}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User List</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    body {
+        color: #566787;
+        background: #f7f5f2;
+		font-family: 'Roboto', sans-serif;
+	}
+	.table-responsive {
+    	margin: 30px 0;
+	}
+	.table-wrapper {
+		min-width: 1000px;
+        background: #fff;
+        padding: 20px 25px;
+		border-radius: 3px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+		color: #fff;
+		background: #40b2cd;		
+		padding: 16px 25px;
+		margin: -20px -25px 10px;
+		border-radius: 3px 3px 0 0;
+    }
+    .table-title h2 {
+        margin: 5px 0 0;
+        font-size: 24px;
+    }
+	.search-box {
+        position: relative;
+        float: right;
+    }
+	.search-box .input-group {
+		min-width: 300px;
+		position: absolute;
+		right: 0;
+	}
+	.search-box .input-group-addon, .search-box input {
+		border-color: #ddd;
+		border-radius: 0;
+	}	
+    .search-box input {
+        height: 34px;
+        padding-right: 35px;
+        background: #f4fcfd;
+        border: none;
+        border-radius: 2px !important;
+    }
+	.search-box input:focus {
+        background: #fff;
+	}
+	.search-box input::placeholder {
+        font-style: italic;
+    }
+	.search-box .input-group-addon {
+        min-width: 35px;
+        border: none;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        z-index: 9;
+        padding: 6px 0;
+    }
+    .search-box i {
+        color: #a0a5b1;
+        font-size: 19px;
+        position: relative;
+        top: 2px;
+    }
+    table.table {
+        table-layout: fixed;
+        margin-top: 15px;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    table.table th:first-child {
+        width: 60px;
+    }
+    table.table th:last-child {
+        width: 120px;
+    }
+    table.table td a {
+        color: #a0a5b1;
+        display: inline-block;
+        margin: 0 5px;
+    }
+	table.table td a.view {
+        color: #03A9F4;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }    
 </style>
-	<title> User List </title>
-</head>
-	<h2 class="text-center">User List</h2>
-<body>
-	
-<div class="container">
-	
-	<div class="row">
+<script>
+$(document).ready(function(){
+	// Activate tooltips
+	$('[data-toggle="tooltip"]').tooltip();
+    
+	// Filter table rows based on searched term
+    $("#search").on("keyup", function() {
+        var term = $(this).val().toLowerCase();
+        $("table tbody tr").each(function(){
+            $row = $(this);
+            var name = $row.find("td:nth-child(2)").text().toLowerCase();
+            console.log(name);
+            if(name.search(term) < 0){                
+                $row.hide();
+            } else{
+                $row.show();
+            }
+        });
+    });
+	$('.deleteBtn').on('click', function() {
 		
-		<table class="table table-hover table-responsive">
-		<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  
-  <div class="search-container">
-    <form action="" method="post">
-      <input type="text" placeholder="Search Staff ID" name="staffIDFind">
-      <button type="submit" name="displayAll"><i class="fa fa-remove"></i></button>
-	  <button type="submit" name="findName"><i class="fa fa-search"></i></button>
-    </form>
-	  <?php
-	  include 'user.php';
+		$('#deleteModal').modal('show');
+		
+		$tr = $(this).closest('tr');
+		
+		var data = $tr.children("td").map(function() {
+			return $(this).text();
+		}).get();
+		
+		console.log(data);
+		$('#deleteID').val(data[0]);
+	});	
+});
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">			
+            <div class="table-title">
+                <div class="row">
+					<div class="col-xs-3">
+						<h2>User List</h2>
+					</div>
+					
+                    <div class="col-xs-6">
+                        <div class="search-box">
+							<div class="input-group">								
+								<input type="text" id="search" class="form-control" placeholder="Search by Name">
+                                <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+							</div>
+                        </div>
+                    </div>
+					<?php
+	                         include 'user.php';
 	  
-	  if (isSet($_POST['findName'])){
-		  $userList= findName();
-	  }
-	  else
-	  $userList = getListOfUser();
-	  ?>
-  </div>
-</div>
-		   <thead bgcolor="#F1C40F">  
-			   <tr>
-			    <th>Staff ID</th>
-				<th>Name</th>
-				<th>View Info</th>
-				<th>Update</th>
-				<th>Delete</th>
-			   </tr>
-			</thead>
-			   
-		        	<?php
+	                        if (isSet($_POST['findName'])){
+		                        $userList= findName();
+	                        }
+	                        else
+	                        $userList = getListOfUser();
+	                    ?>
+					<div class="col-xs-3">
+							<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add User</span></a>
+													
+						</div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        
+                        <th style="width: 22%;">staffID</th>
+                        <th style="width: 22%;">Username</th>
+                        <th>View</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
 				
 				
 			$bil=1;
@@ -147,18 +223,96 @@ body {
 				    echo "<input type='hidden' value='$staffID' name='staffIDUpdate'>";
 		            echo '<td><button type="submit" data-toggle="modal" data-target="#update" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></form></td>';
 					
-					echo '<form action="userProc.php" method="post" >';
-			        echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 
-		            echo '<td><button type="submit" name="deleteUserBtn" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></form></td>
+					//echo '<form action="userProc.php" method="post" >';
+			        //echo "<input type='hidden' value='$staffID' name='staffIDDelete'>"; 
+		            echo '<td><button type="button" name="deleteUserBtn"  class="delete btn btn-danger btn-sm deleteBtn"><span class="glyphicon glyphicon-trash"></span></button></td>
 		        </tr>';
 				$bill++; }
 		       ?> 
-		    </tbody>
-		</table>
-	 <br/>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="../addUser/addUser.html"><span class="glyphicon glyphicon-plus-sign"></span> Add User </a>
-		
-
-
+                    
+                        
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>  
+	
+<div id="deleteModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="user.php" method="post">
+					<div class="modal-header">						
+						<h4 class="modal-title">Delete User</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">	
+						<input type="hidden" name="deleteID" id="deleteID">
+						<p>Are you sure you want to delete these Records?</p>
+						<p class="text-warning"><small>This action cannot be undone.</small></p>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-danger" name="deleteBtn">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<div id="addEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="user.php" method="post">
+					<div class="modal-header">						
+						<h4 class="modal-title">Add User</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Staff ID</label>
+							<input type="text" name="staffID" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Username</label>
+							<input type="text" name="uname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" name="password" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input type="text" name="email" class="form-control" required>
+						</div>
+						<div class="form-group">
+							                <label>User Type</label>
+                                            <select name="userType" class="form-control">
+                                                <option selected="true" disabled="disabled">Please Select User Type</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="Staff">Staff</option>
+                                            </select>
+											</div>
+						<div class="form-group">
+							               <label>Question</label>
+                                            <select name= "question" class="form-control" id="sel1">
+                                                <option selected="true" disabled="disabled">Please Select Security Question</option>
+                                                <option value="Which is your favorite movie?">Which is your favorite movie?</option>
+                                                <option value="What is your pets name?">What is your pet's name?</option>
+                                                <option value="What is the name of your village?">What is the name of your village?</option>
+                                            </select>
+                                        </div>
+						
+						<div class="form-group">
+							<label>Answer</label>
+							<input type="text" name="answer" class="form-control" required>
+						</div>					
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-success" name="addBtn" value="Add">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -7,7 +7,7 @@ function getUserInformation($staffID)
 $con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
 if(!$con)
 	{
-	echo  mysqli_connect_error(); 
+	echo  mysqli_connect_error();
 	exit;
 	}
 $sql = "select * from users where staffID = '".$staffID."'";
@@ -76,7 +76,7 @@ function updateUser(){
 $con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
 if(!$con)
 	{
-	echo  mysqli_connect_error(); 
+	echo  mysqli_connect_error();
 	exit;
 	}
 	
