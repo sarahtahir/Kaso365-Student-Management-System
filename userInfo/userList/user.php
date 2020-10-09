@@ -3,7 +3,7 @@
 function getListOfUser()
 {
 //create connection
-$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con=mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error();
@@ -16,7 +16,7 @@ return $qry;  //return query
 
 function getUserInfo()
 {
-	$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con=mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error();
@@ -31,7 +31,7 @@ if(!$con)
 
 if (isset($_POST['addBtn']))
 {
-$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con=mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error();
@@ -62,7 +62,7 @@ header('Location:userList.php');
 
 if (isset($_POST['deleteBtn']))
 {
-$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+$con=mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error();
@@ -82,7 +82,7 @@ echo "<script>";
 };
 
 function findName(){
-	$con=mysqli_connect("localhost","kaso365","kaso365","kaso365");
+	$con=mysqli_connect("localhost","id14621811_kaso365ms","kaso365_MSystem","id14621811_kaso365");
 if(!$con)
 	{
 	echo  mysqli_connect_error();
