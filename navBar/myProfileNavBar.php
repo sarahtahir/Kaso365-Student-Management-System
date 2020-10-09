@@ -49,7 +49,7 @@ if ($userType == 'Admin'){
           <a class="dropdown-item" href="../view my profile/view my profile.php">My Profile</a>
           <a class="dropdown-item" href="../resetPassEmail/emailForm.html">Change Password</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../userList.php">User List</a>
+          <a class="dropdown-item" href="../userInfo/userList/userList.php">User List</a>
 		  
 		  <a class="dropdown-item" href="../staffInfo/staffList/staffList.php">Staff List</a>
 		  <div class="dropdown-divider"></div>

@@ -3,98 +3,14 @@
   <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Main Page</title>
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-	<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-
-* {box-sizing: border-box;}
-ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
-
-.month {
-  padding: 70px 25px;
-  width: 100%;
-  background: grey;
-  text-align: center;
-}
-
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #ddd;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
-}
-
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
-}
-
-.days li .active {
-  padding: 5px;
-  background: #1abc9c;
-  color: white !important
-}
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
-}
-
-@media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 2px;}
-}
-
-@media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
-}
-
+    <!-- Bootstrap -->
+	  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
   </head>
   <body>
@@ -111,12 +27,17 @@ body {font-family: Verdana, sans-serif;}
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="../../view my profile/view my profile.php" class="w3-bar-item w3-button"><i class="fa fa-user fa-fw"></i> My Profile</a>
 		<a href="../../resetPassEmail/emailForm.html" class="w3-bar-item w3-button"><i class="fa fa-key fa-fw"></i>Change Password</a>
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> School Management</a>        
-        <a href="../../studentInfo/studentList/studentList.php" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> Students Management</a>
         
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-users fa-fw"></i> Students Information</a>
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-money fa-fw"></i> School Spending</a>
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog fa-fw"></i> Settings</a>
+        <a href="../../studentInfo/studentList/studentList.php" class="w3-bar-item w3-button"><i class="fa fa-bullseye fa-fw"></i> Student List</a>
+        
+        <a href="../../insertStudAt/studAttendanceList.php" class="w3-bar-item w3-button"><i class="fa fa-users fa-fw"></i> Student Attendance</a>
+        
+        <a href="../../studentResult/studentResultList.php" class="w3-bar-item w3-button"><i class="fa fa-users fa-fw"></i> Student Result</a>
+        
+        
+        <a href="../../studentFee/feeList.php" class="w3-bar-item w3-button"><i class="fa fa-money fa-fw"></i> Student Monthly Fee</a>
+		<a href="../../schoolSpending/spendingList.php" class="w3-bar-item w3-button"><i class="fa fa-money fa-fw"></i> School Spending</a>
+		
         <a href="../../Login/logout.php" class="w3-bar-item w3-button"><i class="fa fa-lock fa-fw"></i> Log Out</a>    
       </div>
     </div>

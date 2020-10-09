@@ -107,7 +107,7 @@ if(!$con)
 $sql = mysqli_query($con,$query);//run query
 
  }
-session_destroy();
+
 	header('Location:studentResultList.php');
 	
 }

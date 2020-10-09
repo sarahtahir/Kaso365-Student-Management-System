@@ -73,7 +73,7 @@ if(!$con)
 	 $query = "UPDATE fees SET amount='$amount' WHERE studentID='$studentID' AND month='$month' AND year='$year'";	 
 	
 $sql = mysqli_query($con,$query);//run query
-session_destroy();
+
 header('Location:feeList.php');
 }
 ?>

@@ -71,7 +71,7 @@ if(!$con)
 	 $query = "UPDATE staffattendance SET attendance_status='$attendance_status' WHERE staffID='$staffID' AND attendance_date='$attendance_date'";	 
 	
 $sql = mysqli_query($con,$query);//run query
-session_destroy();
+
 header('Location:staffAttendanceList.php');
 }
 

@@ -71,7 +71,7 @@ if(!$con)
 	 $query = "UPDATE studentattendance SET attendance_status='$attendance_status' WHERE studentID='$studentID' AND attendance_date='$attendance_date'";	 
 	
 $sql = mysqli_query($con,$query);//run query
-session_destroy();
+
 header('Location:studAttendanceList.php');
 }
 
