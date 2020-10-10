@@ -1,0 +1,67 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+	
+
+}@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: grey;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, white, grey);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, white, grey); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.banner-sec{background:url(https://c0.wallpaperflare.com/preview/229/213/311/united-states-nashville-workspace-work-table.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+.container{background:#fff; border-radius: 20px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.carousel-inner{border-radius:0 10px 10px 0;}
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#000000;}
+.login-sec .copy-text a{color:#000000;}
+.login-sec h6{margin-bottom:30px; font-weight:800; font-size:25px; color: dark;}
+.login-sec h6:after{content:" "; width:100px; height:5px; background:grey; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #000000; color:#fff; font-weight:600;}
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h5{color:black; font-weight:600;}
+.banner-text h5:after{content:" "; width:100px; height:5px; background:#fff; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
