@@ -53,7 +53,7 @@ if ($userType == 'Admin'){
 		  
 		  <a class="dropdown-item" href="../staffInfo/staffList/staffList.php">Staff List</a>
 		  <div class="dropdown-divider"></div>
-		 <a class="dropdown-item" href="../staffInfo/staffList/staffList.php">Staff List</a>
+		 <a class="dropdown-item" href="../insertStudAt/studAttendanceList.php">Staff Attendance</a>
 		  <a class="dropdown-item" href="../schoolSpending/spendingList.php">School Spending</a>
 		  	<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="../Login/logout.php">Logout</a>
